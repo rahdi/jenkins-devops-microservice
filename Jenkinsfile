@@ -7,11 +7,18 @@
 
 // Declarative syntax
 pipeline {
-		agent any
+		// agent any
+
+		agent {
+			docker {
+				image: 'maven:3.6.3-jdk-11'
+			}
+		}
 
 		stages {
 				stage('Build') {
 						steps {
+								sh 'mvn --version'
 								echo 'Building...'
 						}
 				}
