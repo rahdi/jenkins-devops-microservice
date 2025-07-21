@@ -26,22 +26,22 @@ pipeline {
 						steps {
 								// sh 'mvn --version'
 								// sh 'node --version'
-								echo 'PATH - $PATH'
-								echo 'BUILD_NUMBER - $env.BUILD_NUMBER'
-								echo 'BUILD_ID - $env.BUILD_ID'
-								echo 'JOB_NAME - $env.JOB_NAME'
-								echo 'BUILD_TAG - $env.BUILD_TAG'
-								echo 'Building...'
+								echo "PATH - $PATH"
+								echo "BUILD_NUMBER - $env.BUILD_NUMBER"
+								echo "BUILD_ID - $env.BUILD_ID"
+								echo "JOB_NAME - $env.JOB_NAME"
+								echo "BUILD_TAG - $env.BUILD_TAG"
+								echo "Building..."
 						}
 				}
 				stage('Test') {
 						steps {
-								echo 'Testing...'
+								echo "Testing..."
 						}
 				}
 				stage('Integration Test') {
 						steps {
-								echo 'Running integration tests...'
+								echo "Running integration tests..."	
 						}
 				}
 		} 
