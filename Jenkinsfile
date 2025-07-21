@@ -21,11 +21,22 @@ pipeline {
 		// 	}
 		// }
 
+		environment {
+			dockerHome = tool 'myDocker'
+			mavenHome = tool 'myMaven'
+			PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+				// PATH = "/usr/local/bin:$PATH"
+				// MAVEN_HOME = '/usr/share/maven'
+				// NODE_HOME = '/usr/local/node'
+				// JAVA_HOME = '/usr/lib/jvm/java-11-openjdk-amd64'
+				// PATH = "$MAVEN_HOME/bin:$NODE_HOME/bin:$JAVA_HOME/bin:$PATH"
+		}
+
 		stages {
 				stage('Build') {
 						steps {
-								// sh 'mvn --version'
-								// sh 'node --version'
+								sh 'mvn --version'
+								sh 'docker version'
 								echo "PATH - $PATH"
 								echo "BUILD_NUMBER - $env.BUILD_NUMBER"
 								echo "BUILD_ID - $env.BUILD_ID"
