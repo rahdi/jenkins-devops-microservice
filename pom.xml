@@ -29,7 +29,7 @@
 		<surefire.version>2.22.1</surefire.version>
 		<failsafe.version>2.22.1</failsafe.version>
 
-		<jacoco.version>0.8.3</jacoco.version>
+		<jacoco.version>0.8.7</jacoco.version>
 		<jacoco.path>${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco.version}/org.jacoco.agent-${jacoco.version}-runtime.jar</jacoco.path>
 		<jacoco.utReport>${project.build.directory}/jacoco.exec</jacoco.utReport>
 		<jacoco.itReport>${project.build.directory}/jacoco-it.exec</jacoco.itReport>
@@ -151,6 +151,16 @@
 	<build>
 		<finalName>currency-exchange</finalName>
 		<plugins>
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+          <configuration>
+              <source>${java.version}</source>
+              <target>${java.version}</target>
+          </configuration>
+      </plugin>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
