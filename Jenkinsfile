@@ -25,7 +25,7 @@ pipeline {
 			dockerHome = tool 'myDocker'
 			mavenHome = tool 'myMaven'
 			JAVA_HOME = tool 'JDK8'
-			PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+			PATH = "$dockerHome/bin:$mavenHome/bin:$JAVA_HOME/bin:$PATH"
 				// PATH = "/usr/local/bin:$PATH"
 				// MAVEN_HOME = '/usr/share/maven'
 				// NODE_HOME = '/usr/local/node'
